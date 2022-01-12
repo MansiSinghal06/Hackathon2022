@@ -1,0 +1,186 @@
+#include <stdio.h>
+#include <cs50.h>
+void hello (void);
+int main ()
+{
+     for(int j =0;j<3;j++)
+    {
+        for(int i=0;i<9;i++)
+        {
+            if(i == 3 || i == 5 )
+            {
+                printf("|");
+            }
+            else
+            {
+                if(j !=2)
+                {
+                printf("_");
+                }
+                else
+                {
+                    printf(" ");
+                }
+            }
+        }
+        printf("\n");
+    }
+    printf("\n");
+    printf("\n");
+    hello ();
+    printf("\n");
+    int i,j;
+    int a =0;
+    float move[9];
+    float moves[9];
+    for(i=0;i<5;i++)
+    {
+       // do
+     //{
+     if(i%2==0)
+     {
+        move[i]=get_float("move X ");
+     }
+     else
+     {
+           move[i]=get_float("move O ");
+     }
+     //while((move[i]<10 && move[i]>14) || (move[i]<20 && move[i]>24) || (move[i]<30 && move[i]>34));
+    }
+    //move0 move2 move4 move6 move8
+    //move1 move3 move5 move7
+    for(i=5;i<9;i++)
+    {
+        if((move[0]+move[4])/2==move[2] || (move[2]+move[0])/2==move[4] || (move[4]+move[2])/2==move[0])
+        {
+            printf("X wins\n");
+            break;
+        }
+        else {
+        //do
+     //{
+
+        if(i%2 !=0)
+        {
+            move[i]=get_float("move O ");
+        if((move[i]+move[i-4])/2==move[i-2] || (move[i-2]+move[i])/2==move[i-4] || (move[i-4]+move[i-2])/2==move[i])
+        {
+            printf("O wins\n");
+            break;
+
+        }
+          else  if((move[i]+move[1])/2==move[i-2] || (move[i-2]+move[i])/2==move[1] || (move[1]+move[i-2])/2==move[i])
+        {
+            printf("O wins\n");
+            break;
+        }
+        else
+        {
+            a++;
+        }
+        }
+        else if(i%2 == 0)
+        {
+            move[i]=get_float("move X ");
+         if((move[i]+move[i-4])/2==move[i-2] || (move[i-2]+move[i])/2==move[i-4] || (move[i-4]+move[i-2])/2==move[i])
+        {
+            printf("X wins\n");
+            break;
+        }
+        else  if((move[i]+move[0])/2==move[i-2] || (move[i-2]+move[i])/2==move[0] || (move[0]+move[i-2])/2==move[i])
+        {
+            printf("X wins\n");
+            break;
+        }
+        else
+        {
+            a++;
+        }
+        }
+    // }
+       //while((move[i]<10 && move[i]>14) || (move[i]<20 && move[i]>24) || (move[i]<30 && move[i]>34));
+    }
+    }
+    if(a==4)
+    {
+        printf("draw\n");
+    }
+}
+void hello (void)
+{
+        for(int j =0;j<3;j++)
+    {
+        for(int i=0;i<9;i++)
+        {
+            if(i == 3 || i == 6 )
+            {
+                printf("|");
+            }
+            else if(i==2)
+            {
+                printf("1");
+            }
+            else if(i==5)
+            {
+                printf("2");
+            }
+            else if(i==8)
+            {
+                printf("3");
+            }
+            else if(i==1 && j==0)
+            {
+                printf("1");
+            }
+            else if(i==4 && j==0)
+            {
+                printf("1");
+            }
+            else if(i==7 && j==0)
+            {
+                printf("1");
+            }
+            else if(i==1 && j==1)
+            {
+                printf("2");
+            }
+            else if(i==4 && j==1)
+            {
+                printf("2");
+            }
+            else if(i==7 && j==1)
+            {
+                printf("2");
+            }
+            //dd
+            else if(i==1 && j==2)
+            {
+                printf("3");
+            }
+            else if(i==4 && j==2)
+            {
+                printf("3");
+            }
+            else if(i==7 && j==2)
+            {
+                printf("3");
+            }
+            else if(i==0)
+            {
+                printf(" ");
+            }
+            else
+            {
+                if(j !=2)
+                {
+                printf("_");
+                }
+                else
+                {
+                    printf(" ");
+                }
+            }
+        }
+        printf("\n");
+    }
+}
