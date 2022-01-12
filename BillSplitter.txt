@@ -1,0 +1,17 @@
+
+#include <iostream.h>
+#include <conio.h>
+
+void main()
+{
+	float a, b, d;
+	clrscr();
+	cout<<"\nEnter the total bill value:";
+	cin>>a;
+	cout<<"\nEnter the total number of people paying the bill:";
+	cin>>b;
+	d = a+b;
+	cout<<"\nThe amout to be paid per head is:";
+	cout<<d;
+	getch();
+}
